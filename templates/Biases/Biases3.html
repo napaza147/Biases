@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+<style>
+    .otree-form-errors {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block title %}PARTE III. Cuestionario de sesgo interporal: Andreoni & Sprenger (2012) {% endblock %}
+
+{% block content %}
+<font color="burlywood"><h4 align="right">Tu ID: {{ participant_id }}</h4></font>
+<br>
+<p> Se presenta la siguiente hoja de decisiones, luego deberá completar cada fila con el monto que asignaría al Pago A. Sin embargo, tienen un plazo y una probabilidad distinta.
+Recuerde que cada columna completa 100 Tokens: B= 100-A. </p>
+<br>
+
+        <img src="{% static 'Biases3.png' %}" width="1050px"/>
+        <br><br>
+        {% formfields %}
+
+{% next_button %}
+
+    {% include Constants.instructions_button %}
+<br>
+<br>
+    <p>
+    {% include Constants.contact_template %}
+    </p>
+
+{% endblock %}
