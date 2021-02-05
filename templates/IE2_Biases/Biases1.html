@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+<style>
+    .otree-form-errors {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block title %}PARTE III. Cuestionario de sesgo interporal: Ida(2014) {% endblock %}
+
+{% block content %}
+<font color="burlywood"><h4 align="right">Tu ID: {{ participant_id }}</h4></font>
+<br>
+<p> Escoja los valores de T y S que te hacen indiferente entre las alternativas 1 y 2. </p>
+<br>
+
+        <img src="{% static 'Biases1.png' %}" width="950px"/>
+        <br><br>
+        {% formfields %}
+
+{% next_button %}
+
+    {% include Constants.instructions_button %}
+<br>
+<br>
+    <p>
+    {% include Constants.contact_template %}
+    </p>
+
+{% endblock %}
