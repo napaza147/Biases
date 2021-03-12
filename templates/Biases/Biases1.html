@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block app_styles %}
+<style>
+    .otree-form-errors {
+        display: none;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+<font color="burlywood"><h4 align="right">Tu ID: {{ participant_id }}</h4></font>
+Primer cuestionario {% endblock %}
+{% block content %}
+
+<p> Escoja los valores de T y S que lo hacen indiferente entre las alternativas A y B. </p>
+
+        <img src="{% static 'Biases1.png' %}" width="800px"/>
+        <br>
+        {% formfields %}
+
+<button class="otree-btn-next btn btn-primary">Siguiente</button>
+
+    {% include Constants.instructions_button %}
+<br>
+<br>
+    <p>
+    {% include Constants.contact_template %}
+    </p>
+
+{% endblock %}
